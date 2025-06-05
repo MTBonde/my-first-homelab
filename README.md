@@ -1,94 +1,105 @@
 # My First Homelab
 
-My first homelab — a hands-on journey into Linux, Docker, DevOps, and self-hosting.  
+My first homelab — a hands-on journey into Linux, Docker, DevOps, and self-hosting.
 As a software development student learning DevOps in school, this project gives me a place to apply concepts, build confidence, and learn by doing.
 
 ---
 
-## 🎯 Goals & Roadmap
+## Goals & Roadmap
 
 I'm building this homelab from scratch to understand real-world infrastructure, deployment, and service management.
 
-### ✅ Phase 1 — Baseline Setup *(Completed 2025-05-24)*
-- Installed Ubuntu Server on old laptop
-- Enabled SSH and static IP
-- Installed Docker
+### Learning Objectives
 
-### ⏳ Phase 2 — Security Hardening
-- Harden SSH (keys only, no root)
-- Set up firewall rules
-- Consider fail2ban or similar
-- Document threat model and decisions
+* Understand basic Linux server administration
+* Practice with DevOps tools (Docker, CI/CD, SSH)
+* Learn to self-host APIs and services with resilience
+* Build confidence through practical, hands-on experimentation
 
-### 🔜 Phase 3 — Remote Access & Deployment
-- Set up Tailscale or WireGuard
-- Test access from outside LAN
-- Plan secure shutdown/startup process
+### Long-Term Plans
 
-<details>
-<summary>📘 Learning Goals</summary>
-
-- Understand basic Linux server administration  
-- Practice with DevOps tools (Docker, CI/CD, SSH)  
-- Learn to self-host APIs and services with resilience  
-- Build confidence through practical work  
-
-</details>
-
-<details>
-<summary>🔮 Long-Term Plans</summary>
-
-- PostgreSQL and/or MongoDB  
-- NAS and backup system  
-- Jellyfin media center  
-- Monitoring tools (Uptime Kuma, Prometheus, Grafana)  
-- Kubernetes / K3s  
-- Ansible or Terraform  
-- Service dashboard  
-- Failover and restore strategies  
-
-</details>
+* PostgreSQL and/or MongoDB
+* NAS and backup system
+* Jellyfin media center
+* Monitoring tools (Uptime Kuma, Prometheus, Grafana)
+* Kubernetes / K3s
+* Ansible or Terraform
+* Service dashboard
+* Failover and restore strategies
 
 ---
 
-## ⚙️ Current Setup Status
+## Current Setup Summary
 
-- Docker installed  
-- SSH access working  
-- Security hardening in progress  
-
----
-
-## 🏁 Milestones
-
-- ✅ Phase 1 — Baseline Setup *(2025-05-24)*  
-  - Ubuntu Server installed  
-  - Static IP + SSH access configured  
-  - Docker installed and tested
-
-- ⏳ Phase 2 — Security Hardening  
-  - Harden SSH (keys only, no root)  
-  - Set up firewall rules  
-  - Consider fail2ban or similar  
-  - Document threat model and decisions
-
-- 🔜 Phase 3 — Remote Access & Deployment  
-  - Set up Tailscale or WireGuard  
-  - Test access from outside LAN  
-  - Plan secure shutdown/startup process
+* Ubuntu Server 24.04 LTS installed with secure SSH access enabled
+* Docker installed and operational
+* Watchtower running outside of Docker Compose for automatic container updates
+* cloudflared running as a systemd service for persistent tunnel uptime
+* NutriFinder API deployed and publicly accessible
 
 ---
 
-## 📘 Lessons Learned
+## Milestones
+
+### ✅ Baseline Setup *(Completed 2025-05-24)*
+
+* Ubuntu Server installed on old laptop
+* SSH access configured
+* Docker installed and verified
+
+### ✅ Public API Deployment *(Completed 2025-06-05)*
+
+* NutriFinder API deployed via Cloudflare Tunnel
+* Live at [api.mtbonde.dev](https://api.mtbonde.dev)
+* HTTPS provided by Cloudflare Tunnel with minimal configuration
+* CI/CD pipeline built with GitHub Actions → DockerHub → Watchtower auto-deployment
+* Used for exam presentation; will serve real users in future
+
+---
+
+## Security Plan (WIP)
+
+* SSH hardened (key-only login, root disabled)
+* Firewall setup under review
+* fail2ban under consideration
+* Threat model and hardening rationale to be documented
+
+---
+
+## Remote Access & Networking (Planned)
+
+* Tailscale or WireGuard setup
+* Additional tunnels or reverse proxies if needed
+
+---
+
+## Deployment Documentation
+
+These documents detail how the NutriFinder API was deployed from scratch in a homelab environment.
+
+* [Cloudflare Tunnel Setup Guide](docs/cloudflare-tunnel.md)
+* [DevOps Journey: From Exam Project to Production](docs/devops-journey.md)
+
+---
+
+## Lessons Learned
 
 See [docs/lessons-learned.md](docs/lessons-learned.md) for a growing log of insights, mistakes, fixes, and reflections.
 
 ---
 
-## 📎 Inspiration
+## System Snapshot
 
-- [YouTube video](https://www.youtube.com/watch?v=8s0DWeHuEaw) that started it all
-- Mischa Vandenburg’s [homelab repo](https://github.com/mischavandenburg/homelab)  
+* Server: Ubuntu 22.04 on repurposed laptop
+* Network: SSH + Static IP + Cloudflare Tunnel
+* Containers: Docker + Compose (MongoDB, NutriFinder API)
+* Deployment: GitHub Actions CI → DockerHub → Watchtower
 
+---
+
+## Inspiration
+
+* [YouTube video](https://www.youtube.com/watch?v=8s0DWeHuEaw) that started it all
+* Mischa Vandenburg’s [homelab repo](https://github.com/mischavandenburg/homelab)
 
 ---
