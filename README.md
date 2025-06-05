@@ -31,7 +31,7 @@ I'm building this homelab from scratch to understand real-world infrastructure, 
 
 ## Current Setup Summary
 
-* Ubuntu Server 24.04 LTS installed with secure SSH access enabled
+* Ubuntu 24.04.2 LTS installed with secure SSH access enabled
 * Docker installed and operational
 * Watchtower running outside of Docker Compose for automatic container updates
 * cloudflared running as a systemd service for persistent tunnel uptime
@@ -90,7 +90,7 @@ See [docs/lessons-learned.md](docs/lessons-learned.md) for a growing log of insi
 
 ## System Snapshot
 
-* Server: Ubuntu 22.04 on repurposed laptop
+* Server: Ubuntu 24.04.2 LTS on repurposed laptop
 * Network: SSH + Static IP + Cloudflare Tunnel
 * Containers: Docker + Compose (MongoDB, NutriFinder API)
 * Deployment: GitHub Actions CI → DockerHub → Watchtower
