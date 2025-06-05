@@ -90,10 +90,11 @@ See [docs/lessons-learned.md](docs/lessons-learned.md) for a growing log of insi
 
 ## System Snapshot
 
-* Server: Ubuntu 24.04.2 LTS on repurposed laptop
-* Network: SSH + Static IP + Cloudflare Tunnel
-* Containers: Docker + Compose (MongoDB, NutriFinder API)
-* Deployment: GitHub Actions CI → DockerHub → Watchtower
+- **OS**: Ubuntu 24.04.2 LTS on repurposed old laptop
+- **Networking**: SSH + Static IP + Cloudflare Tunnel
+- **Containers**: Docker + Compose (MongoDB, NutriFinder API)
+- **Deployment**: GitHub Actions → DockerHub → Watchtower
+- **Automation**: Watchtower + systemd Cloudflare Tunnel
 
 ---
 
